@@ -58,7 +58,7 @@ class _LogInButtonState extends State<LogInButton> {
     setState(() {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => const LoginPage(),
         ),
       );
     });
@@ -70,9 +70,9 @@ class _LogInButtonState extends State<LogInButton> {
         onPressed: click,
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: Text("Login in",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 50,
                       fontFamily: "MoonDance",
                       fontWeight: FontWeight.bold)),
@@ -81,8 +81,8 @@ class _LogInButtonState extends State<LogInButton> {
             Expanded(
                 flex: 2,
                 child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
+                  decoration: const BoxDecoration(
+                      image: const DecorationImage(
                           image: AssetImage("assets/images/sign-in.png"),
                           fit: BoxFit.fill),
                       shape: BoxShape.rectangle),
@@ -102,7 +102,7 @@ class RecruterButton extends StatefulWidget {
 class _RecruterButtonState extends State<RecruterButton> {
   void click() {
     setState(() {
-      UsersLoading();
+      const UsersLoading();
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const UsersLoading(),
@@ -117,9 +117,9 @@ class _RecruterButtonState extends State<RecruterButton> {
         onPressed: click,
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: Text("View graduates",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 50,
                       fontFamily: "MoonDance",
                       fontWeight: FontWeight.bold)),
@@ -128,8 +128,8 @@ class _RecruterButtonState extends State<RecruterButton> {
             Expanded(
                 flex: 2,
                 child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
+                  decoration: const BoxDecoration(
+                      image: const DecorationImage(
                           image: AssetImage("assets/images/flame-find.png"),
                           fit: BoxFit.fill),
                       shape: BoxShape.rectangle),
@@ -163,8 +163,8 @@ class _CreateUserButtonState extends State<CreateUserButton> {
         onPressed: click,
         child: Column(
           children: [
-            Expanded(
-              child: Text("Create account",
+            const Expanded(
+              child: const Text("Create account",
                   style: TextStyle(
                       fontSize: 50,
                       fontFamily: "MoonDance",
@@ -174,9 +174,9 @@ class _CreateUserButtonState extends State<CreateUserButton> {
             Expanded(
                 flex: 3,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/images/flame-create.png"),
+                          image: const AssetImage("assets/images/flame-create.png"),
                           fit: BoxFit.fitWidth),
                       shape: BoxShape.rectangle),
                 )),
@@ -192,8 +192,8 @@ class UserColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: Card(color: frontColur, child: LogInButton())),
-        Expanded(child: Card(color: frontColur, child: CreateUserButton()))
+        Expanded(child: Card(color: frontColur, child: const LogInButton())),
+        Expanded(child: Card(color: frontColur, child: const CreateUserButton()))
       ],
     );
   }
@@ -202,6 +202,6 @@ class UserColumn extends StatelessWidget {
 class RecruterColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Card(color: frontColur, child: RecruterButton());
+    return Card(color: frontColur, child: const RecruterButton());
   }
 }

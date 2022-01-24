@@ -1,8 +1,6 @@
 import 'package:cv_app/models/concatenated_user_model.dart';
-import 'package:cv_app/models/full_user_model.dart';
 import 'package:cv_app/pages/home_page.dart';
 import 'package:cv_app/pages/loading_pages/users_loading_page.dart';
-import 'package:cv_app/pages/recruiter_pages/recruiters_page.dart';
 import 'package:cv_app/pages/user_pages/user_profile/education.dart';
 import 'package:cv_app/pages/user_pages/user_profile/experience.dart';
 import 'package:cv_app/pages/user_pages/user_profile/skills.dart';
@@ -20,15 +18,15 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.keyboard_arrow_left_sharp),
+          icon: const Icon(Icons.keyboard_arrow_left_sharp),
           onPressed: () {
             if (canEdit) {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => HomePage(),
+                builder: (context) => const HomePage(),
               ));
             }else{
                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => UsersLoading(),
+                builder: (context) => const UsersLoading(),
               ));
             }
           },
@@ -44,26 +42,26 @@ class UserProfile extends StatelessWidget {
                   radius: 50,
                   backgroundColor: backColour,
                   backgroundImage:
-                      AssetImage('assets/images/flame-graduation.png'),
+                      const AssetImage('assets/images/flame-graduation.png'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  user.userDetails.username,
-                  style: TextStyle(
+                  user.userDetails.username+" "+ user.userDetails.surname,
+                  style: const TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'MoonDance'),
                 ),
                 Text(
                   user.userDetails.subtitle,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 25,
                     fontFamily: 'SpaceMoon',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                   width: 250,
                   child: Divider(
@@ -72,7 +70,7 @@ class UserProfile extends StatelessWidget {
                 ),
                 Card(
                     color: middelColour,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
                     child: ListTile(
                       leading: Icon(
                         Icons.phone,
@@ -80,13 +78,13 @@ class UserProfile extends StatelessWidget {
                       ),
                       title: Text(
                         user.userDetails.phone,
-                        style: TextStyle(fontFamily: 'SpaceMoon'),
+                        style: const TextStyle(fontFamily: 'SpaceMoon'),
                       ),
                     )),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Card(
                     color: middelColour,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
                     child: ListTile(
                       leading: Icon(
                         Icons.email,
@@ -94,11 +92,11 @@ class UserProfile extends StatelessWidget {
                       ),
                       title: Text(
                         user.userDetails.email,
-                        style: TextStyle(fontFamily: 'SpaceMoon'),
+                        style: const TextStyle(fontFamily: 'SpaceMoon'),
                       ),
                     )),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "About Me",
                   style: TextStyle(
                     fontFamily: 'SpaceMoon',
@@ -110,14 +108,14 @@ class UserProfile extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
                     user.userDetails.description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: 'SpaceMoon',
                       fontSize: 15,
                     ),
                     textAlign: TextAlign.justify,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                   width: 250,
                   child: Divider(

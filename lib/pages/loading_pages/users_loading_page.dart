@@ -2,6 +2,7 @@
 import 'package:cv_app/models/shortend_user_model.dart';
 import 'package:cv_app/pages/recruiter_pages/recruiters_page.dart';
 import 'package:cv_app/services/user_services.dart';
+import 'package:cv_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -26,10 +27,11 @@ class _UsersLoadingState extends State<UsersLoading> {
   @override
   Widget build(BuildContext context) {
     getUsers();
-    return const Scaffold(
-      body: Center(
+    return  Scaffold(
+      backgroundColor: backColour,
+      body: const Center(
         child: SpinKitChasingDots(
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
     );

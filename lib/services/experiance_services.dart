@@ -1,9 +1,5 @@
 import 'package:cv_app/models/user_experiance_model.dart';
-import 'package:cv_app/models/user_skills_model.dart';
-
 import 'dart:convert';
-import 'package:cv_app/models/full_user_model.dart';
-import 'package:cv_app/models/shortend_user_model.dart';
 import 'package:cv_app/utils/constants.dart';
 import 'package:http/http.dart' as http;
 

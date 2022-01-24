@@ -3,7 +3,6 @@
 import 'package:cv_app/models/user_education_model.dart';
 import 'package:cv_app/pages/input_forms/create_education_form.dart';
 import 'package:cv_app/utils/constants.dart';
-import 'package:cv_app/utils/custom_widgets.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,7 +16,7 @@ class EducationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: middelColour,
-      child: ExpansionTile(title: Text('Education'), children: <Widget>[for (UserEducation education in userEducation) EducationCard(education.name,education.university),
+      child: ExpansionTile(title: const Text('Education'), children: <Widget>[for (UserEducation education in userEducation) EducationCard(education.name,education.university),
       if(canEdit) AddEducation(email)
       ]),
     );
@@ -38,15 +37,15 @@ class EducationCard extends StatelessWidget {
               child:  Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.school),
+                    leading: const Icon(Icons.school),
                     title: Text(name,
-                      style: TextStyle(fontFamily: "SpaceMoon"),
+                      style: const TextStyle(fontFamily: "SpaceMoon"),
                     ),
                   ),
                   ListTile(
-                leading: Icon(Icons.location_city),
+                leading: const Icon(Icons.location_city),
                 title: Text(university,
-                  style: TextStyle(fontFamily: "SpaceMoon"),
+                  style: const TextStyle(fontFamily: "SpaceMoon"),
                 ),
               ),
                 ],

@@ -52,7 +52,7 @@ class _CreateSkillState extends State<CreateSkill> {
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                      suffixIcon: Text("%"),
+                      suffixIcon: Text("%",style: TextStyle(fontSize: 50),),
                       prefixIcon: Icon(Icons.person_outline_sharp),
                       labelText: "Skill proficiency"),
                   controller: proficiencyController,

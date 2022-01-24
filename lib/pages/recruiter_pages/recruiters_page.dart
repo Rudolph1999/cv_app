@@ -20,6 +20,7 @@ class _RecruitersPageState extends State<RecruitersPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: backColour,
           appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left_sharp),
@@ -30,13 +31,15 @@ class _RecruitersPageState extends State<RecruitersPage> {
                   );},
           ),title: Text("Graduates"),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              // iterates through all the users
-              for (ShortendUser user in widget.users)
-                UserCards(user.username,user.email)
-            ],
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                // iterates through all the users
+                for (ShortendUser user in widget.users)
+                  UserCards(user.username,user.email)
+              ],
+            ),
           ),
         ),
       ),
@@ -58,6 +61,7 @@ class _UserCardsState extends State<UserCards> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: frontColur,
       child: ListTile(
         leading: CircleAvatar(
           radius: 50,

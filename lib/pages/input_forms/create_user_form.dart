@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // This is the create user form where a user can provide his intial details to be saved
 // The user will then navigated to another page where he can add skills ,education ,etc 
 class CreateUserForm extends StatefulWidget {
+  const CreateUserForm({Key? key}) : super(key: key);
+
 
 
   @override
@@ -45,13 +47,13 @@ class _CreateUserFormState extends State<CreateUserForm> {
       child: Scaffold(
          appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.keyboard_arrow_left_sharp),
+            icon: const Icon(Icons.keyboard_arrow_left_sharp),
             onPressed: () {Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => const HomePage(),
                     )
                   );},
-          ),title: Text("Create account"),
+          ),title: const Text("Create account"),
         ),
         backgroundColor: backColour,
         body: SingleChildScrollView(
@@ -62,13 +64,13 @@ class _CreateUserFormState extends State<CreateUserForm> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  customInputWidget(nameController,"First name",Icon(Icons.person_outline_sharp),),
-                  customInputWidget(surnameController, "surname", Icon(Icons.person_outline_sharp)),
-                  customInputWidget(subTileController, "Sub title", Icon(Icons.person_outline_sharp)),             
-                  customInputWidget(emailController, "Email", Icon(Icons.email)),
-                  customInputWidget(phoneNumberControler, "Phone number", Icon(Icons.phone)),
-                  customInputWidget(descriptionController, "Descripttion", Icon(Icons.description)),
-                  customInputWidget(passwordController, "password", Icon(Icons.password)),
+                  customInputWidget(nameController,"First name",const Icon(Icons.person_outline_sharp),),
+                  customInputWidget(surnameController, "surname", const Icon(Icons.person_outline_sharp)),
+                  customInputWidget(subTileController, "Sub title", const Icon(Icons.person_outline_sharp)),             
+                  customInputWidget(emailController, "Email", const Icon(Icons.email)),
+                  customInputWidget(phoneNumberControler, "Phone number", const Icon(Icons.phone)),
+                  customInputWidget(descriptionController, "Descripttion", const Icon(Icons.description)),
+                  customInputWidget(passwordController, "password", const Icon(Icons.password)),
                   const SizedBox(height: 5),
                   ElevatedButton(
                       onPressed: click, child: const Text("Create Account"))
@@ -105,8 +107,8 @@ class _CreateUserFormState extends State<CreateUserForm> {
       }
        }else{
          
-         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text("Email already in use"),
+         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: const Text("Email already in use"),
     ));
        }
     });
